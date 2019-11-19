@@ -752,6 +752,12 @@
                                 Romania
                               </a>
                             </li>
+                            <li data-region="RS">
+                              <a href="#" tabindex="-1" class="flag rs"
+                                 data-i18n="settings#egress-region#select-rs">
+                                Serbia
+                              </a>
+                            </li>
                             <li data-region="SE">
                               <a href="#" tabindex="-1" class="flag se"
                                  data-i18n="settings#egress-region#select-se">
@@ -1158,9 +1164,9 @@
             <!-- Log template -->
             <script type="text/html" id="log-template">
               <tr data-class="priority">
-                <td class="timestamp" data-content="timestamp">
+                <td class="timestamp" data-content-text="timestamp">
                 </td>
-                <td class="message" data-content="message">
+                <td class="message" data-content-text="message">
                 </td>
               </tr>
             </script>
@@ -1220,7 +1226,7 @@
           <script type="text/html" id="locale-template">
             <div class="language-item">
               <a href="#" class="language-choice"
-                 data-value="localeCode" data-content="localeName"></a>
+                 data-value="localeCode" data-content-text="localeName"></a>
             </div>
           </script>
         </div><!-- /language-pane -->
