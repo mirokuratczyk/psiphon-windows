@@ -495,7 +495,7 @@ bool CoreTransport::WriteParameterFiles(tstring& configFilename, tstring& server
         config["MigrateRemoteServerListDownloadFilename"] = WStringToUTF8(remoteServerListFilename.wstring());
 
         tstring oslDownloadDirectory;
-        if (GetDataPath({ LOCAL_SETTINGS_APPDATA_SUBDIRECTORY, _T("osl") }, oslDownloadDirectory)) {
+        if (GetPath({ LOCAL_SETTINGS_APPDATA_SUBDIRECTORY, _T("osl") }, oslDownloadDirectory)) {
             config["MigrateObfuscatedServerListDownloadDirectory"] = WStringToUTF8(oslDownloadDirectory);
         }
 

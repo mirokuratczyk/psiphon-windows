@@ -169,6 +169,23 @@ bool ExtractExecutable(
 }
 
 
+bool GetPath(tstring& pathSuffix, tstring& o_path) {
+    TCHAR path[MAX_PATH];
+    if (!SHGetSpecialFolderPath(NULL, path, CSIDL_APPDATA, FALSE))
+    {
+        my_print(NOT_SENSITIVE, false, _T("%s - SHGetFolderPath failed (%d)"), __TFUNCTION__, GetLastError());
+        return false;
+    }
+
+    filesystem::path appDataPath(path);
+    auto dataDirectory = filesystem::path(appDataPath);
+    dataDirectory.append(pathSuffix);
+
+    o_path = dataDirectory;
+    return true;
+}
+
+
 bool GetDataPath(const vector<tstring>& pathSuffixes, tstring& o_path) {
     TCHAR path[MAX_PATH];
     if (!SHGetSpecialFolderPath(NULL, path, CSIDL_APPDATA, FALSE))
